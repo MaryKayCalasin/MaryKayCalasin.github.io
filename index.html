@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mary Kay Calasin</title>
+<meta name="description" content="Software Engineer i overgang fra helsesektoren til IT. Sykepleier som ble utvikler.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #eef1ef;
+    --paper-raised: #e2e7e3;
+    --ink: #1b2420;
+    --ink-soft: #4a564e;
+    --line: #cdd6cf;
+    --accent: #2f6f74;
+    --accent-soft: #e1eceb;
+    --warm: #b1522f;
+    --warm-soft: #f5e5dd;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #121512; --paper-raised: #1a1f1b; --ink: #e7ece8; --ink-soft: #a7b3ab;
+      --line: #2b332d; --accent: #5fa8ac; --accent-soft: #1a2827;
+      --warm: #d98860; --warm-soft: #2c2019;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #121512; --paper-raised: #1a1f1b; --ink: #e7ece8; --ink-soft: #a7b3ab;
+    --line: #2b332d; --accent: #5fa8ac; --accent-soft: #1a2827;
+    --warm: #d98860; --warm-soft: #2c2019;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: #eef1ef; }
+  @media (prefers-color-scheme: dark) { html { background: #121512; } }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 20px 90px;
+  }
+  a { color: var(--accent); }
+  .page { max-width: 700px; margin: 0 auto; }
+
+  header { padding: 56px 0 34px; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1;
+    margin: 0 0 10px; text-wrap: balance;
+  }
+  .tagline {
+    font-family: var(--mono); font-weight: 500; font-size: 0.86rem;
+    letter-spacing: 0.02em; color: var(--accent); margin: 0 0 20px; text-wrap: balance;
+  }
+  .statement {
+    font-family: var(--serif); font-weight: 600; font-size: clamp(1.15rem, 3vw, 1.4rem);
+    line-height: 1.42; color: var(--ink); max-width: 54ch; margin: 0 0 24px; text-wrap: balance;
+    border-left: 3px solid var(--warm); padding-left: 18px;
+  }
+  .contact-row {
+    display: flex; flex-wrap: wrap; gap: 8px 18px;
+    font-family: var(--mono); font-size: 0.84rem;
+  }
+  .contact-row a, .contact-row span { color: var(--ink-soft); text-decoration: none; }
+  .contact-row a:hover { color: var(--accent); }
+  .contact-row .sep { color: var(--line); }
+
+  section { padding: 40px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-family: var(--serif); font-weight: 600; font-size: 1.45rem;
+    margin: 0 0 18px; text-wrap: balance;
+  }
+  p { margin: 0 0 14px; max-width: 60ch; font-size: 0.97rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .project {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    background: var(--paper-raised);
+  }
+  .project.flagship { border-color: var(--accent); border-width: 1.5px; }
+  .project-head { padding: 20px 22px 14px; }
+  .project-head .badge {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 8px;
+  }
+  .project-head h3 { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; margin: 0 0 8px; }
+  .project-head p { font-size: 0.92rem; margin: 0 0 14px; max-width: none; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--mono); font-size: 0.72rem; background: var(--accent-soft);
+    color: var(--accent); border: 1px solid var(--line); padding: 3px 9px; border-radius: 3px;
+  }
+  .project-links {
+    display: flex; gap: 18px; padding: 12px 22px;
+    border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.82rem;
+  }
+  .project-links a { text-decoration: none; font-weight: 500; }
+  .project-links a:hover { text-decoration: underline; }
+
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  @media (max-width: 520px) { .facts { grid-template-columns: 1fr; } }
+  .fact { background: var(--paper-raised); padding: 16px 18px; }
+  .fact .k { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+  .fact .v { font-size: 0.9rem; }
+  .fact .v div { margin-bottom: 3px; }
+  .fact .v div:last-child { margin-bottom: 0; }
+
+  .award {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--warm-soft); border: 1px solid var(--line); border-radius: 6px;
+    padding: 16px 20px; margin-top: 20px;
+  }
+  .award .mark { font-family: var(--mono); color: var(--warm); font-size: 0.85rem; flex: 0 0 auto; }
+  .award p { margin: 0; font-size: 0.9rem; max-width: none; }
+  .award strong { color: var(--ink); }
+
+  footer {
+    padding-top: 36px; text-align: center;
+    font-family: var(--mono); font-size: 0.8rem; color: var(--ink-soft);
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <p class="eyebrow">Mysen · åpen for Oslo</p>
+    <h1>Mary Kay Calasin</h1>
+    <p class="tagline">Software Engineer i overgang fra helsesektoren til IT</p>
+    <p class="statement">Jeg forstår helsedata fra innsiden — hva som registreres, hvorfor, og hva konsekvensene er når data er feil eller mangelfulle. Den kombinasjonen, teknisk kompetanse og ekte domeneforståelse, er sjelden.</p>
+    <div class="contact-row">
+      <a href="mailto:marykaycalasin@gmail.com">marykaycalasin@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/MaryKayCalasin">github.com/MaryKayCalasin</a>
+      <span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/mary-kay-calasin-aa8834239">linkedin.com/in/mary-kay-calasin</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Om meg</h2>
+    <p>Jeg er sykepleier som ble datautvikler, drevet av en genuin fascinasjon for hva data egentlig kan fortelle oss. I ti år jobbet jeg i helsesektoren — brukte EPJ-systemer daglig, administrerte ressursallokering med datadrevne tilnærminger, og så på nært hold hvordan god og dårlig datakvalitet påvirker beslutninger som betyr noe for ekte mennesker.</p>
+    <p>Den erfaringen vekket noe i meg: jeg ville ikke bare bruke dataene, jeg ville forstå dem, strukturere dem og gjøre dem til noe verdifullt. Jeg studerer nå backend-programmering ved Gokstad Akademiet, mottar mentorskap fra en senior full stack-utvikler for bygging av en komplett produksjonsapplikasjon, og deltar ukentlig i et seminar ledet av en senior data engineer med fokus på SQL, datamodellering og moderne dataplattformer. Jeg bygger prosjekter som prøver å ta domenekunnskapen med meg — ikke legge den igjen.</p>
+  </section>
+
+  <section>
+    <h2>Prosjekter</h2>
+
+    <div class="project flagship">
+      <div class="project-head">
+        <span class="badge">Hovedprosjekt</span>
+        <h3>Homecare Coordination</h3>
+        <p>En backend for norske kommuners hjemmetjeneste — bygget på det jeg selv koordinerte som sykepleier hos Bydel Sagene. Konflikt- og reisetidssjekket besøksplanlegging, kvalifikasjons- og kontinuitetsbevisst automatisk omfordeling ved fravær, kommunenivå multi-tenant dataisolasjon, GDPR-revisjonsspor, og et vedtak/IPLOS-fundament forankret i faktisk erfaring med Gerica, PROFIL og ELISE som superbruker. Fant og fikset selv et cross-tenant sikkerhetshull, verifisert med integrasjonstester — ikke bare påstått.</p>
+        <div class="tags">
+          <span class="tag">Java 17</span>
+          <span class="tag">Spring Boot 3</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Flyway</span>
+          <span class="tag">Spring Security</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">React 19</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/MaryKayCalasin/homecare-coordination">Kode →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="badge">Apr 2026</span>
+        <h3>AI Expenses Tracker</h3>
+        <p>Et AI-drevet backend-API bygget fra bunnen av med C# og ASP.NET Core. Integrerte OpenRouter AI for automatisk parsing og kategorisering av norske kvitteringstekster.</p>
+        <div class="tags">
+          <span class="tag">C#</span>
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Entity Framework</span>
+          <span class="tag">OpenRouter AI</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <span>Live demo tilgjengelig på forespørsel</span>
+        <a href="https://github.com/MaryKayCalasin/expenses-tracker">Kode →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bakgrunn</h2>
+    <div class="facts">
+      <div class="fact">
+        <span class="k">Klinisk erfaring</span>
+        <div class="v">
+          <div>Sykepleier — St. Olavs Hospital, Gastro Akutt Kirurgi</div>
+          <div>Koordinerende sykepleier — Bydel Sagene Hjemmetjenesten</div>
+          <div>Sykepleier — Norlandia Hjemmetjenesten</div>
+          <div>Helsefagarbeider — Norlandia / Ecura / Oslo Kommune</div>
+        </div>
+      </div>
+      <div class="fact">
+        <span class="k">EPJ-systemer, praktisk erfaring</span>
+        <div class="v">
+          <div>Gerica · PROFIL · VISMA</div>
+          <div>ELISE (superbruker) · Helseplattformen</div>
+        </div>
+      </div>
+      <div class="fact">
+        <span class="k">Utdanning</span>
+        <div class="v">
+          <div>Backend Programmering — Gokstad Akademiet (2027)</div>
+          <div>Java Developer Bootcamp — Uplift Code Camp</div>
+          <div>Bachelor i Sykepleie — University of Makati</div>
+        </div>
+      </div>
+      <div class="fact">
+        <span class="k">Sertifikater</span>
+        <div class="v">
+          <div>Professional Scrum Master I (PSM I)</div>
+          <div>Autorisert sykepleier — Helsedirektoratet</div>
+          <div>Autorisert helsefagarbeider — Helsedirektoratet</div>
+        </div>
+      </div>
+    </div>
+    <div class="award">
+      <span class="mark">🏆</span>
+      <p><strong>Fagdagspremievinner</strong> — DigiSis Hackathon 2026, Java Avansert Spor. Konkurrerte på avansert Java-spor mot problemer inspirert av norsk offentlig sektor, arrangert av SpareBank 1 Utvikling, NAV IT og Den norske dataforening.</p>
+    </div>
+  </section>
+
+  <footer>
+    <a href="mailto:marykaycalasin@gmail.com">marykaycalasin@gmail.com</a> · <a href="https://github.com/MaryKayCalasin">GitHub</a> · <a href="https://www.linkedin.com/in/mary-kay-calasin-aa8834239">LinkedIn</a>
+  </footer>
+</div>
+
+</body>
+</html>
